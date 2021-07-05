@@ -7,4 +7,4 @@
 
 #include "heapsort.h"
 
-void kruskal(int** rutas, int C, int D, int H, int* rutas_out, int* n_rutas);
+void kruskal(int** rutas, int C, int D, int H, int* rutas_out, int* n_rutas, int* costo);

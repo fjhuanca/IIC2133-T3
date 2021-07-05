@@ -9,10 +9,10 @@
 
 int main(int argc, char** argv)
 {
-    /*
+    
     // bloque de código para aumentar el stack size, obtenido de stack overflow.
     
-    const rlim_t kStackSize = 48 * 1024 * 1024;   // min stack size = 24 MB
+    const rlim_t kStackSize = 4000 * 1024 * 1024;   // min stack size = 24 MB
     struct rlimit rl;
     int result;
 
@@ -26,7 +26,7 @@ int main(int argc, char** argv)
             }
         }
     }
-    */
+    
     // Revisamos los argumentos
     if(argc != 3) {
         printf("Modo de uso: %s <network.txt> <output.txt>\n", argv[0]);
@@ -66,7 +66,9 @@ int main(int argc, char** argv)
     printf("%d\n", H);
     int* rutas_out = (int*) malloc((H) * sizeof(int*));
     int n_rutas;
-    kruskal(rutas, C, D, H, rutas_out, &n_rutas);
+    int costo;
+    kruskal(rutas, C, D, H, rutas_out, &n_rutas, &costo);
+    fprintf(output_file, "%d\n", costo);
     for (int x=0; x<n_rutas; x++){
         fprintf(output_file, "%d\n", rutas_out[x]);
     }
