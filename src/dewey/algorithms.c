@@ -9,6 +9,7 @@ void kruskal(int** rutas, int C, int D, int H, int* rutas_out, int* n_rutas, int
     int productores[V];
     *n_rutas = 0;
     *costo = 0;
+    int suma = 0;
     int n_conjuntos = V;
     for (int i=0; i<V; i++){
         if (i<C) productores[i] = 0;
@@ -65,7 +66,9 @@ void kruskal(int** rutas, int C, int D, int H, int* rutas_out, int* n_rutas, int
                 len_conjuntos[id_conj2] = 0;
                 if (productores[id_conj2] == 1){
                     productores[id_conj1] = productores[id_conj1] + 1;
+                    suma = suma + 1;
                 }
+                suma -= productores[id_conj2];
                 productores[id_conj2] = 0;
                 n_conjuntos = n_conjuntos - 1;
                 for (int c=l1; c<l1+l2; c++){
@@ -73,10 +76,6 @@ void kruskal(int** rutas, int C, int D, int H, int* rutas_out, int* n_rutas, int
                 }
                 len_conjuntos[id_conj1] = l1 + l2;
             }
-        }
-        int suma = 0;
-        for (int i=0; i<V; i++){
-            suma = suma + productores[i];
         }
         // printf("{%d - %d}\n", suma, n_conjuntos);
         if (suma == n_conjuntos) break;

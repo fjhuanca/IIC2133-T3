@@ -60,6 +60,7 @@ int main(int argc, char** argv)
         rutas[h][2] = p;
         rutas[h][3] = h;
     }
+    fclose(input_file);
     
     printf("%d\n", C);
     printf("%d\n", D);
@@ -78,7 +79,6 @@ int main(int argc, char** argv)
         free(rutas[x]);
     }
     free(rutas);
-    fclose(input_file);
     fclose(output_file);
     // Terminamos exitosamente
     return 0;
