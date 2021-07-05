@@ -9,7 +9,7 @@
 
 int main(int argc, char** argv)
 {
-    
+    /*
     // bloque de código para aumentar el stack size, obtenido de stack overflow.
     
     const rlim_t kStackSize = 4000 * 1024 * 1024;   // min stack size = 24 MB
@@ -32,6 +32,7 @@ int main(int argc, char** argv)
         printf("Modo de uso: %s <network.txt> <output.txt>\n", argv[0]);
         return 1;
     }
+    */
 
     /* ------------- POR IMPLEMENTAR -------------- */
     /* El código de tu tarea va aquí.               */

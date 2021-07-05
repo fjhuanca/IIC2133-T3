@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+
+/*Obtenido y adaptado levemente desde GeeksForGeeks*/
 void heapify(int** arr, int n, int i)
 {
     int largest = i; // Initialize largest as root
