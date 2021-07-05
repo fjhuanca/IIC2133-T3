@@ -48,7 +48,7 @@ int main(int argc, char** argv)
     fscanf(input_file, "%d", &H);
     int** rutas = (int**) malloc((H) * sizeof(int**));
     for (int x=0; x<H; x++){
-        rutas[x] = (int*)calloc(4, sizeof(int*));
+        rutas[x] = (int*)malloc(4 * sizeof(int*));
     }
     // memset(matriz, 0, sizeof(matriz));
     for (int h=0; h<H; h++){
@@ -62,9 +62,9 @@ int main(int argc, char** argv)
     }
     fclose(input_file);
     
-    printf("%d\n", C);
-    printf("%d\n", D);
-    printf("%d\n", H);
+    // printf("%d\n", C);
+    // printf("%d\n", D);
+    // printf("%d\n", H);
     int* rutas_out = (int*) malloc((H) * sizeof(int*));
     int n_rutas;
     int costo;
